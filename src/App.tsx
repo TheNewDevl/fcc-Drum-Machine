@@ -4,10 +4,12 @@ import Sound from "./Components/Sound/Sound";
 
 function App() {
   return (
-    <div>
-      {SoundsList.map((sd: SoundType) => (
-        <Sound key={sd.id} sound={sd} />
-      ))}
+    <div id="drum-machine">
+      <div>
+        {SoundsList.map((sd: SoundType) => (
+          <Sound key={sd.id} sound={sd} />
+        ))}
+      </div>
     </div>
   );
 }

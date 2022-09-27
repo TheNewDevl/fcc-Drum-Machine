@@ -8,6 +8,7 @@ export type AudioStateType = {
 export type SoundType = {
   id: string;
   url: string;
+  keyName: string;
 };
 
 export enum OnOff {
