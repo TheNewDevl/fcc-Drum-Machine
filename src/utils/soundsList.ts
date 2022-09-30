@@ -18,7 +18,7 @@ export const SoundsList: SoundType[] = [
   },
   {
     id: "Heater-4",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4.mp3",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3",
     keyName: "A",
   },
   {
