@@ -16,4 +16,6 @@ export type DrumMachineContextType = {
   setLoop: Dispatch<SetStateAction<boolean>>;
   onOff: boolean;
   setOnOff: Dispatch<SetStateAction<boolean>>;
+  soundId: SoundType["id"];
+  setSoundId: Dispatch<SetStateAction<SoundType["id"]>>;
 };

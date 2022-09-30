@@ -6,12 +6,13 @@ export const DrumMachineContext = createContext<DrumMachineContextType>(
 );
 
 export const DrumMachineProvider = ({ children }: PropsWithChildren) => {
-  const [isLoopSelected, setLoop] = useState(true);
+  const [isLoopSelected, setLoop] = useState(false);
   const [onOff, setOnOff] = useState(true);
+  const [soundId, setSoundId] = useState("");
 
   return (
     <DrumMachineContext.Provider
-      value={{ isLoopSelected, setLoop, onOff, setOnOff }}
+      value={{ isLoopSelected, setLoop, onOff, setOnOff, soundId, setSoundId }}
     >
       {children}
     </DrumMachineContext.Provider>

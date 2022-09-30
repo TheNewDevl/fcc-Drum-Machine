@@ -18,24 +18,25 @@ const Sound = ({ sound }: SoundProps) => {
     useState<AudioStateType>(defaultSoundState);
 
   //Retrieve the loop state from context
-  const { isLoopSelected, onOff } = useContext(DrumMachineContext);
+  const { isLoopSelected, onOff, setSoundId } = useContext(DrumMachineContext);
 
   //Contain Audio HTML Element
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleSounds = (e?: React.MouseEvent | null) => {
     e && e.preventDefault();
+    setSoundId(sound.id);
 
     if (!soundState.playing) {
       setSoundState({ playing: audioRef.current, id: sound.id });
       PlayAudio(audioRef.current!, isLoopSelected);
-
       audioRef.current!.addEventListener("ended", () => {
         setSoundState(defaultSoundState);
       });
     } else if (soundState.playing) {
       stopAudio(soundState.playing);
       setSoundState(defaultSoundState);
+      setSoundId("");
     }
   };
   const btnRef = useRef<HTMLButtonElement>(null);
@@ -43,7 +44,7 @@ const Sound = ({ sound }: SoundProps) => {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === sound.keyName.toLowerCase()) {
-        btnRef.current!.click() /* handleSounds(null)*/;
+        btnRef.current!.click();
       }
     };
     window.addEventListener("keypress", handleKeyPress);
@@ -68,6 +69,7 @@ const Sound = ({ sound }: SoundProps) => {
         id={sound.id}
         onClick={handleSounds}
         disabled={!onOff}
+        onKeyDown={() => handleSounds()}
       >
         <audio
           ref={audioRef}
