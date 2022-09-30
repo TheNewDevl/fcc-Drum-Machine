@@ -1,0 +1,52 @@
+$font_size: 4vw;
+$pad-width: 100%;
+$pad-height: 100%;
+$pad-bg: #0ec626;
+$pad-bg-hover: lighten($pad-bg, 5%);
+$pad-bg-playing: lighten($pad-bg, 10%);
+$pad-bg-shadow: rgba(0, 0, 0, 0.4);
+
+#drum-machine {
+  border: 2px solid #14a0bd;
+  padding: 1em;
+  border-radius: 10px;
+  background: #049bba;
+  box-shadow: 5px 5px 10px 0 #505050;
+}
+
+.btn-container {
+  position: relative;
+  width: 31%;
+  aspect-ratio: 1/1;
+  margin-bottom: 3%;
+}
+
+.drum-pad {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $pad-width;
+  height: $pad-height;
+  margin-top: (-$pad-height)/2;
+  margin-left: (-$pad-width)/2;
+  cursor: pointer;
+  border: none;
+  font-size: $font_size;
+  color: #fff;
+  background-color: $pad-bg;
+  text-shadow: 0 1px 1px darken($pad-bg, 7%);
+  box-shadow: 0 4px 0 darken($pad-bg, 7%), 0 5px 5px 1px $pad-bg-shadow;
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    background-color: $pad-bg-hover;
+    text-shadow: 0 1px 1px darken($pad-bg, 10%);
+    box-shadow: 0 4px 0 darken($pad-bg, 10%), 0 5px 5px 1px $pad-bg-shadow;
+  }
+
+  &.playing {
+    background-color: $pad-bg-playing;
+    margin-top: (-$pad-height)/2 + 4;
+    box-shadow: none;
+  }
+}

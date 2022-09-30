@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { AudioStateType, SoundType } from "../../utils/types";
 import { PlayAudio, stopAudio } from "../../utils/soundFuncs";
 import { DrumMachineContext } from "../../utils/context/DrumMachineContext";
+import "./Sound.scss";
 
 type SoundProps = {
   sound: SoundType;
@@ -54,20 +55,22 @@ const Sound = ({ sound }: SoundProps) => {
   };
 
   return (
-    <button
-      ref={btnRef}
-      className={handleClassName()}
-      id={sound.id}
-      onClick={handleSounds}
-    >
-      <audio
-        ref={audioRef}
-        className="clip"
-        id={sound.keyName}
-        src={sound.url}
-      ></audio>
-      {sound.keyName}
-    </button>
+    <div className="btn-container">
+      <button
+        ref={btnRef}
+        className={handleClassName()}
+        id={sound.id}
+        onClick={handleSounds}
+      >
+        <audio
+          ref={audioRef}
+          className="clip"
+          id={sound.keyName}
+          src={sound.url}
+        ></audio>
+        {sound.keyName}
+      </button>
+    </div>
   );
 };
 
