@@ -5,7 +5,7 @@ $pad-bg: #0ec626;
 $pad-bg-hover: lighten($pad-bg, 5%);
 $pad-bg-playing: lighten($pad-bg, 10%);
 $pad-bg-shadow: rgba(0, 0, 0, 0.4);
-
+$disabled-color: #727272;
 #drum-machine {
   border: 2px solid #14a0bd;
   padding: 1em;
@@ -38,10 +38,22 @@ $pad-bg-shadow: rgba(0, 0, 0, 0.4);
   box-shadow: 0 4px 0 darken($pad-bg, 7%), 0 5px 5px 1px $pad-bg-shadow;
   transition: all 150ms ease-in-out;
 
+  &:disabled {
+    background: $disabled-color;
+    cursor: initial;
+    box-shadow: 0 4px 0 darken($disabled-color, 7%), 0 5px 5px 1px $disabled-color;
+  }
+
   &:hover {
     background-color: $pad-bg-hover;
     text-shadow: 0 1px 1px darken($pad-bg, 10%);
     box-shadow: 0 4px 0 darken($pad-bg, 10%), 0 5px 5px 1px $pad-bg-shadow;
+
+    &:disabled {
+      background: $disabled-color;
+      text-shadow: none;
+      box-shadow: 0 4px 0 darken($disabled-color, 7%), 0 5px 5px 1px $disabled-color;
+    }
   }
 
   &.playing {

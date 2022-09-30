@@ -18,7 +18,7 @@ const Sound = ({ sound }: SoundProps) => {
     useState<AudioStateType>(defaultSoundState);
 
   //Retrieve the loop state from context
-  const { isLoopSelected } = useContext(DrumMachineContext);
+  const { isLoopSelected, onOff } = useContext(DrumMachineContext);
 
   //Contain Audio HTML Element
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -61,6 +61,7 @@ const Sound = ({ sound }: SoundProps) => {
         className={handleClassName()}
         id={sound.id}
         onClick={handleSounds}
+        disabled={!onOff}
       >
         <audio
           ref={audioRef}
