@@ -1,0 +1,44 @@
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.9em;
+  cursor: pointer;
+  line-height: 1.4em;
+}
+
+.custom-input {
+  position: relative;
+  width: 50px;
+  height: 20px;
+  background: #0ec626;
+  display: block;
+  padding: 4%;
+  transition: all 300ms ease-in-out;
+}
+
+input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.custom-input:after {
+  content: '';
+  transition: all 300ms ease-in-out;
+  position: absolute;
+  background: #fff;
+  height: 80%;
+  aspect-ratio: 1/1;
+  transform: translateX(185%);
+}
+
+.custom-input.off:after {
+  transform: translateX(0);
+  background: #bdbdbd;
+
+}
+
+.custom-input.off {
+  background: #e7e7e7;
+}

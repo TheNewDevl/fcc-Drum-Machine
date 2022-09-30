@@ -11,14 +11,9 @@ export type SoundType = {
   keyName: string;
 };
 
-export enum OnOff {
-  OFF = 0,
-  ON = 1,
-}
-
 export type DrumMachineContextType = {
   isLoopSelected: boolean;
   setLoop: Dispatch<SetStateAction<boolean>>;
-  onOff: OnOff;
-  setOnOff: Dispatch<SetStateAction<OnOff>>;
+  onOff: boolean;
+  setOnOff: Dispatch<SetStateAction<boolean>>;
 };
