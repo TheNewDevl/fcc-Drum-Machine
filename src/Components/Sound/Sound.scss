@@ -6,6 +6,7 @@ $pad-bg-hover: lighten($pad-bg, 5%);
 $pad-bg-playing: lighten($pad-bg, 10%);
 $pad-bg-shadow: rgba(0, 0, 0, 0.4);
 $disabled-color: #727272;
+
 #drum-machine {
   border: 2px solid #14a0bd;
   padding: 1em;
@@ -37,6 +38,9 @@ $disabled-color: #727272;
   text-shadow: 0 1px 1px darken($pad-bg, 7%);
   box-shadow: 0 4px 0 darken($pad-bg, 7%), 0 5px 5px 1px $pad-bg-shadow;
   transition: all 150ms ease-in-out;
+  @media screen and (min-width: 768px) {
+    font-size: 61px;
+  }
 
   &:disabled {
     background: $disabled-color;

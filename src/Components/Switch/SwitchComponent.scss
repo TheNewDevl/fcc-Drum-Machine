@@ -6,6 +6,10 @@ label {
   font-size: 0.9em;
   cursor: pointer;
   line-height: 1.4em;
+  @media screen and (min-width: 768px) {
+    font-size: 1.2em;
+    line-height: 2em;
+  }
 }
 
 .custom-input {
@@ -16,6 +20,10 @@ label {
   display: block;
   padding: 4%;
   transition: all 300ms ease-in-out;
+  @media screen and (min-width: 768px) {
+    width: 70px;
+    height: 30px;
+  }
 }
 
 input {
@@ -31,6 +39,10 @@ input {
   height: 80%;
   aspect-ratio: 1/1;
   transform: translateX(185%);
+  @media screen and (min-width: 768px) {
+    transform: translateX(170%);
+
+  }
 }
 
 .custom-input.off:after {

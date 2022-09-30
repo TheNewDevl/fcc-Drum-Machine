@@ -1,0 +1,9 @@
+#drum-machine {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1.5em;
+    width: 80vw;
+    max-width: 1200px;
+  }
+}

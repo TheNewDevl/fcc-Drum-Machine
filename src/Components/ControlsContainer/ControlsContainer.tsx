@@ -12,8 +12,8 @@ const ControlsContainer = ({}: ControlsContainerProps) => {
 
   return (
     <div className="ControlsContainer">
-      <ScreenDisplay textContent={soundId} onOff={onOff} />
       <SwitchComponent name="On/Off" state={onOff} handler={setOnOff} />
+      <ScreenDisplay textContent={soundId} onOff={onOff} />
       <SwitchComponent name="Loop" state={isLoopSelected} handler={setLoop} />
     </div>
   );
