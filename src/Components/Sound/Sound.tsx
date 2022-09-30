@@ -23,7 +23,7 @@ const Sound = ({ sound }: SoundProps) => {
   //Contain Audio HTML Element
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const handleSounds = (e: React.MouseEvent | null) => {
+  const handleSounds = (e?: React.MouseEvent | null) => {
     e && e.preventDefault();
 
     if (!soundState.playing) {
@@ -49,6 +49,12 @@ const Sound = ({ sound }: SoundProps) => {
     window.addEventListener("keypress", handleKeyPress);
     return () => window.removeEventListener("keypress", handleKeyPress);
   }, [soundState]);
+
+  useEffect(() => {
+    if (!onOff && soundState.playing) {
+      handleSounds();
+    }
+  }, [onOff]);
 
   const handleClassName = () => {
     return soundState.playing ? "drum-pad playing" : "drum-pad";
